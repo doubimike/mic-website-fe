@@ -15,7 +15,7 @@ function Blog({ posts }:{posts:Post[]}) {
 // This function gets called at build time
 export async function getStaticProps() {
   // Call an external API endpoint to get posts
-  const res = await fetch('http://localhost:8080/hello')
+  const res = await fetch('http://139.198.19.145:39005/hello')
   const posts = await res.json()
   console.log('post',posts);
 
