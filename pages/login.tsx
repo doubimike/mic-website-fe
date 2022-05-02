@@ -16,12 +16,13 @@ function Login() {
             // 获取数据成功后的其他操作
             //.....
             window.localStorage.setItem('jwt', res.data.token)
+            window.localStorage.setItem('user', JSON.stringify(res.data.user))
             var decoded = jwt_decode(res.data.token);
             console.log('decoded',decoded);
             Router.push('/dashboard')
           })
     }
-    return <div className="flex flex-col justify-center items-center h-screen">
+    return <div className="flex flex-col justify-center items-center mt-20">
         <div className="w-full max-w-xs">
             <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <div className="mb-4">

@@ -19,7 +19,7 @@ function Register() {
               console.log('e',e);
           })
     }
-    return <div className="flex flex-col justify-center items-center h-screen">
+    return <div className="flex flex-col justify-center items-center mt-20">
         <div className="w-full max-w-xs">
             <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">

@@ -9,7 +9,7 @@ const isPrd = process.env.NODE_ENV == "production";
 
 //区分开发环境还是生产环境基础URL
 export const baseUrl = isPrd
-  ? "https://www.production.com"
+  ? "http://139.198.19.145:39005"
   : "http://127.0.0.1:8080";
 
 axios.defaults.timeout = 100000;

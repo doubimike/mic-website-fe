@@ -2,7 +2,15 @@ import '../styles/globals.css'
 // import 'tailwindcss/tailwind.css'
 import type { AppProps } from 'next/app'
 
+
+
+import Nav from '../components/nav'
+
+
 function MyApp({ Component, pageProps }: AppProps) {
+
+  
+
   return <>
     <div className="global-loading absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <svg role="status" className=" inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -11,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       </svg>
     </div>
+    <Nav></Nav>
     <Component {...pageProps} /></>
 }
 
