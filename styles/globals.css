@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loading-indicator .global-loading {
+  display: block;
+}
+
+.global-loading {
+  display: none;
+}
