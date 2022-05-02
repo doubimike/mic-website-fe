@@ -31,6 +31,7 @@ axios.interceptors.request.use(
     config.data = JSON.stringify(config.data);
     config.headers = {
       "Content-Type": "application/json",
+      "Authorization": window.localStorage.getItem('jwt')||"",
     };
     return config;
   },
@@ -192,7 +193,6 @@ export default function http(fecth:string, url:string, param:object) {
 
 //失败提示
 function msag(err:any) {
-  debugger
   // 业务错误
   if(err && err.data){
     alert(err.data.message)

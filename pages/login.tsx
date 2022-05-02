@@ -1,29 +1,34 @@
 import React, { useState } from 'react'
+import Router from 'next/router'
 import {login}  from '../services/user'
+import jwt_decode from "jwt-decode";
 
 
 function Login() {
     const [formData, setFormData] = useState({
-        username: "",
-        password: ""
+        password: "",
+        email:"",
     })
     const handleSubmit = (e:React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
         console.log(formData)
-        login(formData).then(res => { 
+        login(formData).then((res) => { 
             // 获取数据成功后的其他操作
             //.....
-            console.log(res)
+            window.localStorage.setItem('jwt', res.data.token)
+            var decoded = jwt_decode(res.data.token);
+            console.log('decoded',decoded);
+            Router.push('/dashboard')
           })
     }
     return <div className="flex flex-col justify-center items-center h-screen">
         <div className="w-full max-w-xs">
             <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-                        用户名
+                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                        邮箱
                     </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" value={formData.username} onChange={(e) => setFormData({ ...formData, username: e.target.value })} />
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
                 </div>
                 <div className="mb-6">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
