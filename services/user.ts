@@ -1,4 +1,5 @@
 import http from '../utils/http';
+import {resCommonType} from '../utils/type'
 
 
 type registerParams = {
@@ -17,10 +18,11 @@ type loginRes ={
   }
 }
 
+
 function login(params:loginParams){
   return new Promise<loginRes>((resolve, reject) => {
     http("post",'/user/login',params).then(res => {
-      resolve (res as loginRes);
+      resolve(res as loginRes);
     },error => {
       console.log("网络异常~",error);
       reject(error)
@@ -28,9 +30,9 @@ function login(params:loginParams){
   }) 
 }
 function register(params:registerParams){
-  return new Promise((resolve, reject) => {
+  return new Promise<resCommonType>((resolve, reject) => {
     http("post",'/user/create',params).then(res => {
-      resolve (res);
+      resolve(res as resCommonType);
     },error => {
       console.log("网络异常~",error);
       reject(error)

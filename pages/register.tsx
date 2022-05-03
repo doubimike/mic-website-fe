@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Router from 'next/router'
 import {register}  from '../services/user'
 
 
@@ -12,9 +13,7 @@ function Register() {
         e.preventDefault()
         console.log(formData)
         register(formData).then(res => { 
-            // 获取数据成功后的其他操作
-            //.....
-            console.log(res)
+            Router.push('/login')
           }).catch(e=>{
               console.log('e',e);
           })
