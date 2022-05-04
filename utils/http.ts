@@ -31,7 +31,7 @@ axios.interceptors.request.use(
     config.data = JSON.stringify(config.data);
     config.headers = {
       "Content-Type": "application/json",
-      "Authorization": window.localStorage.getItem('jwt')||"",
+      "USER_LOGIN_TOKEN": window.localStorage.getItem('jwt')||"",
     };
     return config;
   },
