@@ -3,7 +3,7 @@ import {resCommonType} from '../utils/type'
 
 
 type registerParams = {
-    username:string,
+    userName:string,
     password:string,
     email:string,
 }

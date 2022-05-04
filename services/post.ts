@@ -2,7 +2,7 @@
 // import httpServer from '../utils/http-server';
 
 import http from '../utils/http';
-import {resCommonType} from '../utils/type'
+import {resCommonType,postParams} from '../utils/type'
 
 // let http:Function; 
 // if(process.browser){
@@ -11,11 +11,6 @@ import {resCommonType} from '../utils/type'
 //   http = httpServer
 // }
 
-type postParams = {
-    title:string,
-    content:string,
-    authorId:string
-}
 
 type idType ={
   id:string
@@ -62,7 +57,7 @@ function updatePost(params:postParams){
   }) 
 }
 
-function deletePost(params:postParams){
+function deletePost(params:idType){
   return new Promise<resCommonType>((resolve, reject) => {
     http("post",'/post/delete',params).then(res => {
       resolve(res as resCommonType);
