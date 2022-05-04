@@ -60,18 +60,17 @@ const Nav = () => {
               <span className="text-white text-teal-200 " onClick={logoOut}>退出</span></>
           ) : (
             <>
-              <a
+              <Link
                 href="/login"
-                className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 mr-4"
               >
-                登录
-              </a>
-              <a
+                <a className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 mr-4">登录</a >
+              </Link>
+              <Link
                 href="/register"
-                className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+                
               >
-                注册
-              </a>
+                <a className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"> 注册</a>
+              </Link>
             </>
           )}
         </div>

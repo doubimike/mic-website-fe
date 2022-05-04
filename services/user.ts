@@ -8,7 +8,7 @@ type registerParams = {
     email:string,
 }
 
-type loginParams = Omit<registerParams,"username">;
+type loginParams = Omit<registerParams,"userName">;
 
 type loginRes ={
   code:string,

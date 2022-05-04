@@ -73,7 +73,7 @@ export function get(url:string, params = {}) {
         params: params,
       })
       .then((response) => {
-        landing(url, params, response.data);
+        // landing(url, params, response.data);
         resolve(response.data);
       })
       .catch((error) => {
@@ -242,11 +242,11 @@ function msag(err:any) {
  * @param params
  * @param data
  */
-function landing(url, params, data) {
-  if (data.code === -1) {
+// function landing(url, params, data) {
+//   if (data.code === -1) {
     
-  }
-}
+//   }
+// }
 
 //设置axios基础路径
 const service = axios.create({
